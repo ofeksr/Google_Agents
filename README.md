@@ -13,7 +13,8 @@ Gmail & Calendar with official Google API's and Keep with [gkeepapi](https://git
 ```
 gmail = google_agents.GmailAgent()
 gmail.login()
-sender=sender, to=to, subject='tests', message_text='tests'
+gmail.create_message(sender=sender, to=to, subject='tests', message_text='tests)
+gmail.send_message(message=msg)
 ```
 
 ```
