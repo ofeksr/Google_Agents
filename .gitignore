@@ -1,0 +1,5 @@
+.idea
+test/database
+venv
+google agents/database
+google agents/__pycache__
