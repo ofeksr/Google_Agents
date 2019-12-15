@@ -33,14 +33,14 @@ class TestGmailAgent(unittest.TestCase):
 
     def test_create_message(self):
         self.assertIsInstance(self.gmail.create_message(sender=sender, to=to,
-                                                        subject='test', message_text='test'),
+                                                        subject='tests', message_text='tests'),
                               dict,
                               msg='Failed to create message')
 
     def test_send_message(self):
         self.gmail.login()
         msg = self.gmail.create_message(sender=sender, to=to,
-                                        subject='test', message_text='test')
+                                        subject='tests', message_text='tests')
 
         self.assertTrue(self.gmail.send_message(message=msg),
                         msg='Failed to send message')
@@ -75,9 +75,9 @@ class TestGoogleCalendarAgent(unittest.TestCase):
         self.assertIsNotNone(self.calendar.add_events(
             start_date=date,
             end_date=date,
-            summary='test',
-            description='test',
-            location='test',
+            summary='tests',
+            description='tests',
+            location='tests',
             delete=True),
             msg='Failed to insert new event')
 
@@ -96,13 +96,13 @@ class TestGoogleKeepAgent(unittest.TestCase):
 
     def test_create_note(self):
         self.keep.login(email_address=email_address, password=keep_password, token=token)
-        self.assertIsInstance(self.keep.create_note(title='test', text='test'),
+        self.assertIsInstance(self.keep.create_note(title='tests', text='tests'),
                               str,
                               msg='Failed to create note')
 
     def test_create_list(self):
         self.keep.login(email_address=email_address, password=keep_password, token=token)
-        self.assertIsInstance(self.keep.create_list(title='test', items=[('t1', False), ('t2', True)]),
+        self.assertIsInstance(self.keep.create_list(title='tests', items=[('t1', False), ('t2', True)]),
                               str,
                               msg='Failed to create list')
 

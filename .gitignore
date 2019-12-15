@@ -1,5 +1,5 @@
 .idea
-test/database
+tests/database
 venv
 google agents/database
 google agents/__pycache__
